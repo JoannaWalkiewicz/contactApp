@@ -1,5 +1,6 @@
 <h1 id="tableLabel">Contact List</h1>
 <p *ngIf="!contacts"><em>Loading...</em></p>
+<a [routerLink]="['/add-contact']">Add</a>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="contacts">
   <thead>
@@ -19,7 +20,7 @@
       <td>{{ contact.email }}</td>
       <td>{{ contact.phoneNumber }}</td>
       <td>{{ contact.birthDate }}</td>
-      <td><a [routerLink]="" (click)="delete(contact)">Delete</a></td>
+      <td><a [routerLink]="" (click)="delete(contact)">Delete</a> | <a [routerLink]="" (click)="edit(contact)">Edit</a></td>
     </tr>
   </tbody>
 </table>

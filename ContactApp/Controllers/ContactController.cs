@@ -27,5 +27,44 @@ namespace ContactApp.Controllers
         {
             this.ContactRepository.Delete(contactId);
         }
+
+        [HttpPut]
+        public void Edit([FromBody]ContactViewModel vm)
+        {
+            var entity = new Contact
+            {
+                ContactId = (int)vm.ContactId,
+                BirthDate = vm.BirthDate,
+                CategoryOther = vm.CategoryOther,
+                ContactCategoryId = vm.ContactCategoryId,
+                ContactSubcategoryId = vm.ContactSubcategoryId,
+                Name = vm.Name,
+                Surname = vm.Surname,
+                Password = vm.Password,
+                Email = vm.Email,
+                PhoneNumber = vm.PhoneNumber,
+            };
+
+            this.ContactRepository.Edit(entity);
+        }
+
+        [HttpPost]
+        public void Add([FromBody]ContactViewModel vm)
+        {
+            var entity = new Contact
+            {
+                BirthDate = vm.BirthDate,
+                CategoryOther = vm.CategoryOther,
+                ContactCategoryId = vm.ContactCategoryId,
+                ContactSubcategoryId = vm.ContactSubcategoryId,
+                Name = vm.Name,
+                Surname = vm.Surname,
+                Password = vm.Password,
+                Email = vm.Email,
+                PhoneNumber = vm.PhoneNumber,
+            };
+
+            this.ContactRepository.Add(entity);
+        }
     }
 }

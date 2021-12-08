@@ -13,5 +13,7 @@ namespace ContactApp.Data
          public DbSet<Contact> Contacts { get; set; }
 
         public DbSet<ContactCategory> ContactCategories { get; set; }
+
+        public DbSet<ContactSubcategory> ContactSubcategories { get; set; }
     }
 }

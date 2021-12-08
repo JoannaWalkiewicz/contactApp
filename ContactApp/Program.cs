@@ -24,6 +24,7 @@ builder.Services.AddAuthentication()
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
+builder.Services.AddScoped<IDictionaryRepository, DictionaryRepository>();
 
 var app = builder.Build();
 
